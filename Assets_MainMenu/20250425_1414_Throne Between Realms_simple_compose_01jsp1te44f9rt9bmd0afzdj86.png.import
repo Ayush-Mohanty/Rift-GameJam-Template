@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://bc03i1my112o"
+path="res://.godot/imported/20250425_1414_Throne Between Realms_simple_compose_01jsp1te44f9rt9bmd0afzdj86.png-8d0def697be1810e2109ad99f49618e3.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Assets_MainMenu/20250425_1414_Throne Between Realms_simple_compose_01jsp1te44f9rt9bmd0afzdj86.png"
+dest_files=["res://.godot/imported/20250425_1414_Throne Between Realms_simple_compose_01jsp1te44f9rt9bmd0afzdj86.png-8d0def697be1810e2109ad99f49618e3.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1
