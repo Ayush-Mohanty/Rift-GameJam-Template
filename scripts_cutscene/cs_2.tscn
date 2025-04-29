@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://cl2r2s8jsb4m7"]
+
+[ext_resource type="Script" uid="uid://c0vyau73o3msa" path="res://scripts_cutscene/cs_2.gd" id="1_qg45s"]
+[ext_resource type="VideoStream" uid="uid://wjcrfysoky60" path="res://Cutscenes/cutscene-2.ogv" id="2_6vv0a"]
+
+[node name="cs2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qg45s")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("2_6vv0a")
+autoplay = true
+expand = true
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
