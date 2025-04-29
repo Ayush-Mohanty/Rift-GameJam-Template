@@ -1,0 +1,163 @@
+[gd_scene load_steps=10 format=3 uid="uid://77wyu7kxggb"]
+
+[ext_resource type="Script" uid="uid://dagpfal2fmowq" path="res://Scripts_Mainmenu/main_menu.gd" id="1_144yc"]
+[ext_resource type="Texture2D" uid="uid://dplpv2tlx1r7k" path="res://Assets_MainMenu/main menu.png" id="2_l7wom"]
+[ext_resource type="Theme" uid="uid://bx1vjbo8htcuw" path="res://Assets_MainMenu/kenneyUI-blue.tres" id="4_72fyt"]
+[ext_resource type="FontFile" uid="uid://ojkwwh3jyyjk" path="res://Assets_MainMenu/kenvector_future.ttf" id="5_joayr"]
+[ext_resource type="Theme" uid="uid://dywnrcxjdqsuh" path="res://Assets_MainMenu/kenneyUI-green.tres" id="6_p6ymv"]
+[ext_resource type="Theme" uid="uid://dqyeaar41o4iu" path="res://Assets_MainMenu/kenneyUI-red.tres" id="7_krdck"]
+
+[sub_resource type="Animation" id="Animation_sli6l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jip1w"]
+resource_name = "fade_in"
+length = 1.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kkyck"]
+_data = {
+&"RESET": SubResource("Animation_sli6l"),
+&"fade_in": SubResource("Animation_jip1w")
+}
+
+[node name="Main_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_144yc")
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_l7wom")
+expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect"]
+libraries = {
+&"": SubResource("AnimationLibrary_kkyck")
+}
+autoplay = "fade_in"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -155.0
+offset_top = 10.0
+offset_right = -8.0
+offset_bottom = 171.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.3065, 1.46179)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_72fyt")
+theme_override_colors/font_hover_color = Color(0.777344, 0.660969, 0, 1)
+theme_override_colors/font_color = Color(1, 0.853535, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.640625, 0.546796, 0, 1)
+theme_override_fonts/font = ExtResource("5_joayr")
+theme_override_font_sizes/font_size = 24
+text = "Play
+"
+flat = true
+
+[node name="System" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("6_p6ymv")
+theme_override_colors/font_hover_color = Color(0.776471, 0.662745, 0, 1)
+theme_override_colors/font_color = Color(1, 0.854902, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.639216, 0.545098, 0, 1)
+theme_override_fonts/font = ExtResource("5_joayr")
+theme_override_font_sizes/font_size = 24
+text = "System"
+flat = true
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("7_krdck")
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_hover_color = Color(0.776471, 0.662745, 0, 1)
+theme_override_colors/font_color = Color(1, 0.854902, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.639216, 0.545098, 0, 1)
+theme_override_fonts/font = ExtResource("5_joayr")
+theme_override_font_sizes/font_size = 24
+text = "Quit"
+flat = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -49.0
+offset_top = -31.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2"]
+layout_mode = 2
+alignment = 2
+
+[node name="Version" type="Label" parent="MarginContainer2/VBoxContainer"]
+layout_mode = 2
+text = "v1.01
+"
+
+[connection signal="animation_finished" from="ColorRect/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/System" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

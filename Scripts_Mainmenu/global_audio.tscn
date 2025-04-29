@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dn70vv1inya8p"]
+
+[ext_resource type="AudioStream" uid="uid://b5cqxdj3ktcxy" path="res://Assets_MainMenu/WhatsApp-Audio-2025-04-05-at-21.03.26.ogg" id="1_6t0p6"]
+
+[node name="GlobalAudio" type="Node2D"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_6t0p6")
+autoplay = true
